@@ -42,4 +42,13 @@ public class SuggestionTest {
         // Expected result is only two words: smorgasbord and smorgasbords
         Assertions.assertEquals(2, testEngine.generateSuggestions("smorgasborg").split("\n").length);
     }
+
+    @Test
+    // Check if a word exists in the SuggestionEngine after it has loaded the data from words.txt
+    public void testThis() throws Exception {
+        testEngine.loadDictionaryData(Paths.get(ClassLoader.getSystemResource("words.txt").toURI()));
+
+        // getWordSuggestionDB() returns a Map where each key is a known word
+        Assertions.assertTrue(testEngine.getWordSuggestionDB().containsKey("dragon"));
+    }
 }
