@@ -45,7 +45,7 @@ public class SuggestionTest {
 
     @Test
     // Check if a word exists in the SuggestionEngine after it has loaded the data from words.txt
-    public void testThis() throws Exception {
+    public void testWordLookup() throws Exception {
         testEngine.loadDictionaryData(Paths.get(ClassLoader.getSystemResource("words.txt").toURI()));
 
         // getWordSuggestionDB() returns a Map where each key is a known word
